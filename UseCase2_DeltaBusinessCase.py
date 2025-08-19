@@ -4,7 +4,7 @@ import numpy as np
 import plotly.express as px
 
 def load_data():
-    df = pd.read_csv("dashboard_flights_df.csv")
+    df = pd.read_csv("dashboard_flights_data.csv")
     return df
 
 def select_date(flights_df: pd.DataFrame, start_date, end_date):
@@ -63,7 +63,7 @@ def cancelled_flights(flights_df: pd.DataFrame, airline: str):
     return fig
 
 def aggregate_delay_metric(flights_df: pd.DataFrame, groupby_col: list, arr_iata: str = None):
-    
+
     """ 
     Output the fraction of delays for each departure airport for certain destinations, if specified.
     Parameters:
