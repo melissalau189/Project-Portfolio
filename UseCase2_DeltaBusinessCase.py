@@ -3,8 +3,8 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 
-def load_data():
-    df = pd.read_csv("dashboard_flights_data.csv")
+def load_data(csv_file):
+    df = pd.read_csv(csv_file)
     return df
 
 def select_date(flights_df: pd.DataFrame, start_date, end_date):
@@ -505,8 +505,8 @@ def map(flights_df: pd.DataFrame, airline: str, scope: str):
     return fig
 
 def main():
-
-    df = load_data()
+    data = input("Enter name of your csv file: ")
+    df = load_data(data)
 
     # Sidebar
     with st.sidebar:
