@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a Python-based ETL pipeline that extracts real-time and historical flight data from the AviationStack API (Paid Plan), stores it in a SQL database, and visualizes key travel insights in a Streamlit dashboard. The system designed can support personal travel planning  and business-level operational insights by analyzing flight delays for various airlines and airports. The project is comprised of **two parts**: an ETL pipeline for data extraction and storage, and applied analyses demonstrating its utility for both business operations and travel planning insights. Analyses and key learnings will be summarized in a slide deck linked [here](https://github.com/melissalau189/Project-Portfolio/blob/main/Aviation%20Project%20Slide%20Deck.pdf).  
+This is a Python-based ETL pipeline that extracts real-time and historical flight data from the AviationStack API (Paid Plan), stores it in a SQL database, and visualizes key insights in a Streamlit dashboard. The system designed can support personal travel planning  and business-level operational insights by analyzing flight delays for various airlines and airports. The project is comprised of **two parts**: an ETL pipeline for data extraction and storage, and applied analyses demonstrating its utility for both business operations and travel planning insights. Analyses and key learnings will be summarized in a slide deck linked [here](https://github.com/melissalau189/Project-Portfolio/blob/main/Aviation%20Project%20Slide%20Deck.pdf).  
 
 **Skills**:   
 * AviationStack API Data Retrieval and Processing  
@@ -29,6 +29,7 @@ The project includes a Python-based ETL (Extract, Transform, Load) pipeline that
     * Data imputation step:
       * The pipeline will prompt the user to choose whether to perform data imputations for delay.
       * Imputation is an option if missing values are small (<5–10%), but if is higher, then it may affect analyses.
+      * It is advised for users to review the data first before proceeding.
 3. Load:  
     * Insert processed data into a SQL database using `sqlalchemy`.
     * Users can append to an existing database or overwrite tables if needed.
@@ -60,7 +61,7 @@ To illustrate the pipeline's utility, two analyses were conducted using differen
 
 ### [Case Study 1: Delta Monthly Performance](https://github.com/melissalau189/Project-Portfolio/blob/main/UseCase2_DeltaBusinessCase.py)
 * **Data Source**: Historical flight performance data from the pipeline
-* **Scope**: Delta flights departing from 12 busiest U.S. airports in June 2025, with United Airlines and American Airlines for benchmark comparison
+* **Scope**: Delta flights departing from 12 busiest U.S. airports on June 2025, with United Airlines and American Airlines for benchmark comparison
 * **Dataset Size**: 194,237 records
 
   ```python
@@ -79,12 +80,12 @@ To illustrate the pipeline's utility, two analyses were conducted using differen
    git clone https://github.com/melissalau189/Project-Portfolio.git
    cd Project-Portfolio
    ```
-3. Install dependencies. Change `dashboard.py` as needed. 
+3. Install dependencies.  
    
     ```
     pip install -r requirements.txt
     ```
-4. Load the **CSV file** containing pre- or post-processed data from the pipeline into the Streamlit app.
+4. Load the **CSV file** containing pre- or post-processed data from the pipeline into the Streamlit app. Ensure the pipeline retains all columns in the processed data.
    
    ```python
      def load_data():
@@ -98,7 +99,7 @@ To illustrate the pipeline's utility, two analyses were conducted using differen
    streamlit run UseCase1_DeltaBusinessCase.py
    ```
 ![Dashboard Preview](dashboard_preview.png)
-> This display represents a subset of the full dashboard. For the full view, reference slides 10 & 11 in the [presentation](Aviation%20Project%20Slide%20Deck.pdf).
+> This display represents a subset of the full dashboard. For the full view, reference slides 10 & 11 in the [presentation](Aviation%20Project%20Slide%20Deck.pdf), or check out the short video file located in the root directory of this repository.
 
 ### [Case Study 2: LAX Flights Data](https://github.com/melissalau189/Project-Portfolio/blob/main/UseCase1_LAXflights.ipynb)  
 * Data Source: Historical flight performance data from the pipeline
@@ -110,6 +111,8 @@ To illustrate the pipeline's utility, two analyses were conducted using differen
   start_date = "2025-05-19"
   end_date = "2025-05-25"
   ```
+
+If you haven't already, please check out the slide deck linked above for a full analysis! :smile: 
 
 
 
