@@ -5,7 +5,7 @@
 This is a Python-based ETL pipeline that extracts real-time and historical flight data from the AviationStack API (Paid Plan), stores it in a SQL database, and visualizes key insights in a Streamlit dashboard. The system designed can support personal travel planning  and business-level operational insights by analyzing flight delays for various airlines and airports. The project is comprised of **two parts**: an ETL pipeline for data extraction and storage, and applied analyses demonstrating its utility for both business operations and travel planning insights. Analyses and key learnings will be summarized in a slide deck linked [here](https://github.com/melissalau189/Project-Portfolio/blob/main/Aviation%20Project%20Slide%20Deck.pdf).  
 
 **Skills**:   
-* AviationStack API Data Retrieval and Processing  
+* AviationStack API Data Retrieval and Processing Pipeline  
 * Data Wrangling & Transformation via Python  
 * Data Aggregation with Python and SQL  
 * Interactive Dashboard Development using Streamlit  
