@@ -112,7 +112,7 @@ To illustrate the pipeline's utility, two analyses were conducted using differen
   end_date = "2025-05-25"
   ```
 
-If you haven't already, please check out the slide deck linked above for a full analysis! :smile: 
+If you haven't already, please check out the slide deck linked in 'Project Overview' for a full analysis! :smile: 
 
 
 
