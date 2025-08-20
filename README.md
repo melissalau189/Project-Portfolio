@@ -2,7 +2,14 @@
 
 ## Project Overview
 
-This is a Python-based ETL pipeline that extracts real-time and historical flight data from the AviationStack API (Paid Plan), stores it in a SQL database, and visualizes key travel insights in a Streamlit dashboard. The system designed can support personal travel planning  and business-level operational insights by analyzing flight delays for various airlines and airports. The project is comprised of **two parts**: an ETL pipeline for data extraction and storage, and applied analyses demonstrating its utility for both business operations and travel planning insights. Analyses and key learnings will be summarized in a slide deck linked [here](https://github.com/melissalau189/Project-Portfolio/blob/main/Aviation%20Project%20Slide%20Deck.pdf).
+This is a Python-based ETL pipeline that extracts real-time and historical flight data from the AviationStack API (Paid Plan), stores it in a SQL database, and visualizes key travel insights in a Streamlit dashboard. The system designed can support personal travel planning  and business-level operational insights by analyzing flight delays for various airlines and airports. The project is comprised of **two parts**: an ETL pipeline for data extraction and storage, and applied analyses demonstrating its utility for both business operations and travel planning insights. Analyses and key learnings will be summarized in a slide deck linked [here](https://github.com/melissalau189/Project-Portfolio/blob/main/Aviation%20Project%20Slide%20Deck.pdf).  
+
+**Skills**:   
+* AviationStack API Data Retrieval and Processing  
+* Data Wrangling & Transformation via Python  
+* Data Aggregation with Python and SQL  
+* Interactive Dashboard Development using Streamlit  
+* Data Presentation and Communication using Google Slides
 
 ## [Part 1: ETL Pipeline](https://github.com/melissalau189/Project-Portfolio/blob/main/flights_etl.ipynb)
 
@@ -52,7 +59,7 @@ The project includes a Python-based ETL (Extract, Transform, Load) pipeline that
 To illustrate the pipeline's utility, two analyses were conducted using different datasets.
 
 ### [Case Study 1: Delta Monthly Performance](https://github.com/melissalau189/Project-Portfolio/blob/main/UseCase2_DeltaBusinessCase.py)
-* **Data Source**: Historical flight performance data (delays, routes, airlines, time-of-day patterns)
+* **Data Source**: Historical flight performance data from the pipeline
 * **Scope**: Delta flights departing from 12 busiest U.S. airports in June 2025, with United Airlines and American Airlines for benchmark comparison
 * **Dataset Size**: 194,237 records
 
@@ -88,12 +95,22 @@ To illustrate the pipeline's utility, two analyses were conducted using differen
 6. Run project script
    
    ```
-   streamlit run UseCase2_DeltaBusinessCase.py
+   streamlit run UseCase1_DeltaBusinessCase.py
    ```
 ![Dashboard Preview](dashboard_preview.png)
 > This display represents a subset of the full dashboard. For the full view, reference slides 10 & 11 of the [presentation](https://github.com/melissalau189/Project-Portfolio/blob/main/Aviation%20Project%20Slide%20Deck.pdf). 
 
-### [Case Study 2: LAX Flights Data](https://github.com/melissalau189/Project-Portfolio/blob/main/UseCase1_LAXflights.ipynb)
+### [Case Study 2: LAX Flights Data](https://github.com/melissalau189/Project-Portfolio/blob/main/UseCase1_LAXflights.ipynb)  
+* Data Source: Historical flight performance data from the pipeline
+* Scope: Flights departing from LAX during Memorial Day week, 2025
+* Dataset Size: 21,534 records
+
+  ```python
+  dep_iata_code = ["LAX"]
+  start_date = "2025-05-19"
+  end_date = "2025-05-25"
+  ```
+
 
 
 
