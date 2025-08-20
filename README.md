@@ -98,7 +98,8 @@ To illustrate the pipeline's utility, two analyses were conducted using differen
    streamlit run UseCase1_DeltaBusinessCase.py
    ```
 ![Dashboard Preview](dashboard_preview.png)
-> This display represents a subset of the full dashboard. For the full view, reference recording [here](dashboard_recording.mp4).
+> This display represents a subset of the full dashboard. For the full view, reference slides 10 & 11 in the [presentation](Aviation%20Project%20Slide%20Deck.pdf).
+
 ### [Case Study 2: LAX Flights Data](https://github.com/melissalau189/Project-Portfolio/blob/main/UseCase1_LAXflights.ipynb)  
 * Data Source: Historical flight performance data from the pipeline
 * Scope: Flights departing from LAX during Memorial Day week, 2025
