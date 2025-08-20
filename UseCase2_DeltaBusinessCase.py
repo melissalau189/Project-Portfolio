@@ -505,7 +505,7 @@ def map(flights_df: pd.DataFrame, airline: str, scope: str):
     return fig
 
 def main():
-    
+
     df = load_data()
 
     # Sidebar
@@ -552,25 +552,21 @@ def main():
 
     # Chart Section
     ## First section 
-    if not filtered_df.empty:
-        col1, = st.columns(1)
-
-        with col1:
-            st.subheader("Delays", help="Unless specified, flights are considered delayed if delay time exceeds 15 minutes")
-            subcol1, subcol2, subcol3 = st.columns([0.5,1,1])
-            with subcol1: 
-                agg_delays_by_airline = aggregate_delay_metric(filtered_df, ["airline"])
-                st.plotly_chart(plot_delay_metric(agg_df=agg_delays_by_airline, x="airline", y="pct_ontime", 
-                                                  x_title="Airline", y_title="% On Time", plot_title="On Time Rate for Major US Airlines"))
-            with subcol2: 
-                relative_delay_heatmap = relative_delay(filtered_df, "Delta Air Lines")
-                st.plotly_chart(relative_delay_heatmap, use_container_width=True, key="relative_delay_chart")
-            with subcol3:
-                agg_delays_by_iata_airline = aggregate_delay_metric(filtered_df, ["dep_iata", "airline"])
-                st.plotly_chart(plot_delay_metric(agg_df=agg_delays_by_iata_airline, x="dep_iata", y="pct_delay", x_title="Departure IATA Code",
-                                                  y_title="% Delays", plot_title="Delay Rate by Departure Airport and Airline", color_by="airline"))
+    with st.container():
+        st.subheader("Delays", help="Unless specified, flights are considered delayed if delay time exceeds 15 minutes")
+        col1, col2, col3 = st.columns([0.5,1,1])
+        with col1: 
+            agg_delays_by_airline = aggregate_delay_metric(filtered_df, ["airline"])
+            st.plotly_chart(plot_delay_metric(agg_df=agg_delays_by_airline, x="airline", y="pct_ontime", 
+                                                x_title="Airline", y_title="% On Time", plot_title="On Time Rate for Major US Airlines"))
+        with col2: 
+            relative_delay_heatmap = relative_delay(filtered_df, "Delta Air Lines")
+            st.plotly_chart(relative_delay_heatmap, use_container_width=True, key="relative_delay_chart")
+        with col3:
+            agg_delays_by_iata_airline = aggregate_delay_metric(filtered_df, ["dep_iata", "airline"])
+            st.plotly_chart(plot_delay_metric(agg_df=agg_delays_by_iata_airline, x="dep_iata", y="pct_delay", x_title="Departure IATA Code",
+                                                y_title="% Delays", plot_title="Delay Rate by Departure Airport and Airline", color_by="airline"))
             
-
     ## Second section           
     with st.container():    
         col1, col2, col3 = st.columns([1, 1, 0.8])  
